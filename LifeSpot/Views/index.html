@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LifeSpot</title>
+    <!--Подключение стилей по отностиельному пути из внешнего файла-->
+    <link href="../Static/CSS/index.css" rel="stylesheet" type="text/css">
+    <script>
+        //alert("Приветствуем на LifeSpot! " + new Date().toLocaleString());
+        // Запросим возраст пользователя и сохраним в переменную
+        let age = prompt("Пожалуйста, введите ваш возраст");
+
+        if (age >= 18) {
+            // Те, кто старше 18, увидят приветствие и будут направлены на сайт
+            alert("Приветствуем на LifeSpot! " + new Date().toLocaleString());
+        }
+        else {
+            // Если введенное число < 18, либо если введено не число -
+            // пользователь будет перенаправлен
+            alert("Наши трансляции не предназначены для лиц моложе 18 лет. Вы будете перенаправлены");
+            window.location.href = "http://www.google.com"
+        }
+    </script>
+</head>
+    
+    <!--Хедер страницы находится над тегом body-->
+    <header id="header-index">
+        <!--Заголовок страницы-->
+        <h1>LifeSpot - прямые трансляции с улиц</h1>
+        <!--Параграф-->
+        <p>Покажем, что происходит прямо сейчас</p>
+        
+        <input type="text"   size=50%>
+    </header>
+    
+    <!--Сайд-бар страницы (пока все ссылки ведут на главную)-->
+    <aside id="sidebar">
+        <div class="navbar">
+            <a href="/"><p>Все трансляции</p></a>
+            <a href="/"><p>О проекте</p></a>
+        </div>
+    </aside>
+    
+    <body>
+        <div class="bordered">
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/1-iS7LArMPA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <h3>Нью-Йорк, Брайант Парк</h3>
+            </div>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/rG13FY2ytno" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <h3>Санкт-Петербург, Невский Проспект</h3>
+            </div>
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/V00D4K9OshI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <h3>Лондон, автобусный маршрут</h3>
+            </div>
+        </div>
+    </body>
+    
+    <!--Футер страницы находится под основной частью (body)-->
+    <footer>
+        <p>LifeSpot - видео трансляции</p>
+        <p>Связь с разработчиком: evmorgunov@yahoo.com</p>
+    </footer>
+</html>
