@@ -7,45 +7,70 @@
     <link href="../Static/CSS/index.css" rel="stylesheet" type="text/css">
     <script src="../Static/JS/index.js"></script>
 </head>
-    
-    <!--Хедер страницы находится над тегом body-->
-    <header id="header-index">
-        <!--Заголовок страницы-->
-        <h1>LifeSpot - прямые трансляции с улиц</h1>
-        <!--Параграф-->
-        <p>Покажем, что происходит прямо сейчас</p>
-        
-        <input type="text"   size=50%>
-    </header>
-    
-    <!--Сайд-бар страницы (пока все ссылки ведут на главную)-->
-    <aside id="sidebar">
-        <div class="navbar">
-            <a href="/"><p>Все трансляции</p></a>
-            <a href="/"><p>О проекте</p></a>
+
+<!--Хедер страницы находится над тегом body-->
+<header id="header-index">
+    <!--Заголовок страницы-->
+    <h1>LifeSpot - прямые трансляции с улиц</h1>
+    <!--Параграф-->
+    <p>Покажем, что происходит прямо сейчас</p>
+
+    <input type="text" size=50%>
+
+    <!--   Код ниже фиг работает. Ютуб запрещаетс считывать индексы. 
+            не понял как , но ругательства идут.
+            Коллеги и ментор обходили - через вынос кода в отдельный скрипт. Своеобразно.
+        <input type="text" oninput="
+               /*Код ниже отрабатывает каждый раз при вводе символа в input */
+               // Сохраняем текст пользовательского запроса.
+               let inputString=document.getElementsByTagName('input')[0].value.toLowerCase();
+               // Находим контейнеры с видео, которые необходимо фильтровать
+               let elements=document.getElementsByClassName('video-container');
+               // Пробегаемся по контейнерам
+               for (let i=0; i <= elements.length; i++ ){
+                    // Вытаскиваем текст описания видео, которое необходимо отфильтровать
+                    let videoText = elements[i].querySelector(".video-title").innerText;
+
+                    // Выполняем фильтрацию, сравнивая значения в нижнем регистре
+                    if(!videoText.toLowerCase().includes(inputString.toLowerCase())){
+                    // Описание
+                    elements[i].style.display = 'none';
+                    } else {
+                        elements[i].style.display = 'inline-block';
+                    }
+                }
+        " size="50%">
+    -->
+</header>
+
+<!--Сайд-бар страницы (пока все ссылки ведут на главную)-->
+<aside id="sidebar">
+    <div class="navbar">
+        <a href="/"><p>Все трансляции</p></a>
+        <a href="/"><p>О проекте</p></a>
+    </div>
+</aside>
+
+<body>
+    <div class="bordered">
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/1-iS7LArMPA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <h3>Нью-Йорк, Брайант Парк</h3>
         </div>
-    </aside>
-    
-    <body>
-        <div class="bordered">
-            <div class="video-container">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/1-iS7LArMPA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <h3>Нью-Йорк, Брайант Парк</h3>
-            </div>
-            <div class="video-container">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/rG13FY2ytno" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <h3>Санкт-Петербург, Невский Проспект</h3>
-            </div>
-            <div class="video-container">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/V00D4K9OshI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <h3>Лондон, автобусный маршрут</h3>
-            </div>
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/rG13FY2ytno" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <h3>Санкт-Петербург, Невский Проспект</h3>
         </div>
-    </body>
-    
-    <!--Футер страницы находится под основной частью (body)-->
-    <footer>
-        <p>LifeSpot - видео трансляции</p>
-        <p>Связь с разработчиком: evmorgunov@yahoo.com</p>
-    </footer>
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/V00D4K9OshI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <h3>Лондон, автобусный маршрут</h3>
+        </div>
+    </div>
+</body>
+
+<!--Футер страницы находится под основной частью (body)-->
+<footer>
+    <p>LifeSpot - видео трансляции</p>
+    <p>Связь с разработчиком: evmorgunov@yahoo.com</p>
+</footer>
 </html>
