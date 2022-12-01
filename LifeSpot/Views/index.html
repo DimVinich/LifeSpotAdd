@@ -7,17 +7,30 @@
     <link href="../Static/CSS/index.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="../Static/JS/index.js"></script>
     <script>
-        //// Проверка на возраст
+
+        //  подписка на канала
+        //setTimeout(function () {
+        //    alert("Подпишись на канал");
+        //}, 60000);
+
+        // вариант через 'стрелочную' функцию
+        //setTimeout(() => alert("Подпишись на канал 'стрелкой'", 60000));
+
+        // Проверка на возраст
         //checkAge();
+
         // сохранение сессии
-        handleSession()
+        handleSession();
+
         // вывод данных сессии в консоль
         sessionLog();
+
     </script>
 </head>
 
 <!--Хедер страницы находится над тегом body-->
 <header id="header-index">
+
     <!--Заголовок страницы-->
     <h1>LifeSpot - прямые трансляции с улиц</h1>
     <!--Параграф-->
@@ -32,7 +45,8 @@
 <aside id="sidebar">
     <div class="navbar">
         <a href="/"><p>Все трансляции</p></a>
-        <a href="/"><p>О проекте</p></a>
+        <a href="/about"><p>О проекте</p></a>
+        <a href="/testing"><p>Тестирование</p></a>
     </div>
 </aside>
 
